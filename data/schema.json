@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/BYDTechSolutions/model-retire/blob/main/data/schema.json",
+  "title": "model-retire dataset",
+  "description": "Deprecated and retired LLM model IDs, each read from the provider's own lifecycle page.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["updated", "models"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "updated": { "$ref": "#/$defs/date", "description": "Date the dataset as a whole was last re-verified." },
+    "models": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/model" }
+    }
+  },
+  "$defs": {
+    "date": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$"
+    },
+    "modelId": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[^\\s\"'`]+$"
+    },
+    "model": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["provider", "id", "status", "source", "checked"],
+      "properties": {
+        "provider": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+          "description": "Provider key, for example openai, anthropic, google-vertex-ai."
+        },
+        "id": { "$ref": "#/$defs/modelId", "description": "The exact model ID string used in API calls." },
+        "aliases": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/modelId" },
+          "description": "Other exact strings the provider lists for the same model."
+        },
+        "status": {
+          "enum": ["deprecated", "retired"],
+          "description": "retired if the provider says so or the shutdown date had passed on the checked date."
+        },
+        "deprecated_on": { "$ref": "#/$defs/date", "description": "Date the deprecation was announced." },
+        "retires_on": { "$ref": "#/$defs/date", "description": "Shutdown date as published by the provider." },
+        "replacement": { "type": "string", "minLength": 1, "description": "Recommended replacement, as written by the provider." },
+        "note": { "type": "string", "minLength": 1, "description": "Qualifications the provider's page puts on the dates." },
+        "source": {
+          "type": "string",
+          "pattern": "^https://",
+          "description": "The official page the entry was read from."
+        },
+        "checked": { "$ref": "#/$defs/date", "description": "Date the entry was last checked against its source." }
+      }
+    }
+  }
+}
