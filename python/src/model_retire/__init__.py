@@ -7,7 +7,7 @@ Example::
     print(format_text(result), end="")
 """
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 from .data import default_dataset, load_dataset_file, merge_datasets, validate_dataset  # noqa: E402
 from .dates import days_between, is_valid_date, today_utc  # noqa: E402

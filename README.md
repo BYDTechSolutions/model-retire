@@ -56,7 +56,7 @@ The exit code is 1 when anything is at error level, so it can gate a build as is
 - uses: actions/setup-node@v4
   with:
     node-version: '22'
-- run: npx --yes @bydtech/model-retire@0.1.0 --format github
+- run: npx --yes @bydtech/model-retire@0.1.1 --format github
 ```
 
 Or with Python:
@@ -66,7 +66,7 @@ Or with Python:
 - uses: actions/setup-python@v5
   with:
     python-version: '3.13'
-- run: pip install bydtech-model-retire==0.1.0
+- run: pip install bydtech-model-retire==0.1.1
 - run: model-retire --format github
 ```
 

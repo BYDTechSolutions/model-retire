@@ -134,4 +134,4 @@ def test_list(project):
 def test_help_and_version(project):
     d = project({})
     assert "Usage:" in cli(["--help"], d)[1]
-    assert cli(["--version"], d)[1] == "0.1.0\n"
+    assert cli(["--version"], d)[1] == "0.1.1\n"

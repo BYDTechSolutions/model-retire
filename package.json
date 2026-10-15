@@ -1,6 +1,6 @@
 {
   "name": "@bydtech/model-retire",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Find deprecated, retiring and retired LLM model IDs in a codebase before a provider shuts them off.",
   "keywords": [
     "llm",

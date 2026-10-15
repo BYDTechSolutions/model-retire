@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-10-16
+
+### Changed
+
+- Releases are published from GitHub Actions through trusted publishing on npm
+  and PyPI; the npm package carries a provenance attestation. No code changes.
+
 ## [0.1.0] - 2026-10-16
 
 ### Added
@@ -20,5 +27,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Dataset of 328 model IDs from OpenAI, Anthropic, the Gemini API, Vertex AI, Mistral, Cohere and Amazon Bedrock, each read from the provider's official page on 2026-10-16, with a JSON Schema and `npm run check-data`.
 - Node package `@bydtech/model-retire` and Python package `bydtech-model-retire` with identical behavior, checked by `npm run parity`.
 
-[Unreleased]: https://github.com/BYDTechSolutions/model-retire/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/BYDTechSolutions/model-retire/releases/tag/v0.1.0
+[Unreleased]: https://github.com/BYDTechSolutions/model-retire/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/BYDTechSolutions/model-retire/releases/tag/v0.1.1
+[0.1.0]: https://github.com/BYDTechSolutions/model-retire/tree/e31a758d649a5345c89806ee049d5d166bb06fd9
