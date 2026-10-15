@@ -1,0 +1,30 @@
+# .github/workflows/model-retire.yml
+# Fails the build when code references a retired model, or one that shuts
+# down within 90 days, and annotates each line in the pull request.
+name: Model retirement check
+on:
+  pull_request:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '0 7 * * 1' # weekly: catches new deprecations without a code change
+permissions:
+  contents: read
+jobs:
+  model-retire:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # With Node:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npx --yes @bydtech/model-retire@0.1.0 --format github
+
+      # Or with Python (use one of the two):
+      # - uses: actions/setup-python@v5
+      #   with:
+      #     python-version: '3.13'
+      # - run: pip install bydtech-model-retire==0.1.0
+      # - run: model-retire --format github

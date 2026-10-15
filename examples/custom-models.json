@@ -1,0 +1,13 @@
+{
+  "models": [
+    {
+      "provider": "internal",
+      "id": "support-bot-v1",
+      "status": "deprecated",
+      "deprecated_on": "2026-09-01",
+      "retires_on": "2026-12-31",
+      "replacement": "support-bot-v2",
+      "note": "Example of a team's own model gateway name; merge with --data examples/custom-models.json."
+    }
+  ]
+}
