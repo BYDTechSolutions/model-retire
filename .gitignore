@@ -1,0 +1,14 @@
+node_modules/
+!test/fixtures/project/node_modules/
+dist/
+*.tgz
+coverage/
+.DS_Store
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+python/dist/
+python/build/
+*.egg-info/
