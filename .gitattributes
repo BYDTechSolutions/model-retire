@@ -1,0 +1,2 @@
+# Fixture bytes must stay exactly as committed (CRLF, BOM, invalid UTF-8, NUL).
+test/fixtures/project/** -text

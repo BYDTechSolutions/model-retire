@@ -12,3 +12,4 @@ __pycache__/
 python/dist/
 python/build/
 *.egg-info/
+python/uv.lock
