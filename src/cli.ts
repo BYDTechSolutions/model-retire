@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import { realpathSync } from 'node:fs';
+import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 import pkg from '../package.json' with { type: 'json' };
@@ -96,7 +97,7 @@ function main(argv: string[], io: CliIO): number {
   if (!isValidDate(today)) throw new UsageError(`invalid --today "${today}": expected YYYY-MM-DD`);
 
   const sets: Dataset[] = values['no-default-data'] ? [] : [defaultDataset()];
-  for (const file of values.data ?? []) sets.push(loadDatasetFile(file));
+  for (const file of values.data ?? []) sets.push(loadDatasetFile(resolve(io.cwd ?? process.cwd(), file)));
   if (sets.length === 0) throw new UsageError('--no-default-data needs at least one --data file');
   const dataset = mergeDatasets(...sets);
 

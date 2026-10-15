@@ -1,0 +1,4 @@
+chat: gemini-2.0-flash
+reasoning: gemini-2.5-pro
+embeddings: text-embedding-004
+fallback: gemini-2.5-pro-latest   # not a listed ID
