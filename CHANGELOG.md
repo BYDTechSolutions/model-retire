@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- The Python package needs Python 3.10 or later. Python 3.9 reached its end of
+  life in October 2025, and GitHub's current Ubuntu runners no longer provide
+  it, so it can no longer be tested. Version 0.1.1 still installs on 3.9.
+
 ## [0.1.1] - 2026-10-16
 
 ### Changed

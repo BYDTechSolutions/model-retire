@@ -9,7 +9,7 @@ description = "Find deprecated, retiring and retired LLM model IDs in a codebase
 readme = "README.md"
 license = "MIT"
 license-files = ["LICENSE"]
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 authors = [{ name = "BYD Tech", email = "sales.bydtech@gmail.com" }]
 keywords = ["llm", "deprecation", "model", "openai", "anthropic", "gemini", "vertex-ai", "bedrock", "mistral", "cohere", "scanner", "cli", "ci"]
 classifiers = [
@@ -18,7 +18,6 @@ classifiers = [
   "Intended Audience :: Developers",
   "Operating System :: OS Independent",
   "Programming Language :: Python :: 3",
-  "Programming Language :: Python :: 3.9",
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",

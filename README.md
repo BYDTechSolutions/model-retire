@@ -17,7 +17,7 @@ The same tool, with the same dataset and the same output, is published twice:
 
 ```sh
 npm install --save-dev @bydtech/model-retire   # Node.js 20 or later
-pip install bydtech-model-retire               # Python 3.9 or later
+pip install bydtech-model-retire               # Python 3.10 or later
 ```
 
 Neither has runtime dependencies.

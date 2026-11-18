@@ -13,7 +13,7 @@ the [repository README](https://github.com/BYDTechSolutions/model-retire#readme)
 pip install bydtech-model-retire
 ```
 
-Python 3.9 or later. No runtime dependencies.
+Python 3.10 or later. No runtime dependencies.
 
 ## Quick start
 
